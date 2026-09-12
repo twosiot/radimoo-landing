@@ -3,6 +3,7 @@ const TALLY_FORM_URL = "https://tally.so/r/jagbXJ";
 const header = document.querySelector(".site-header");
 const waitlistLinks = document.querySelectorAll("[data-waitlist-link]");
 const configWarnings = document.querySelectorAll("[data-config-warning]");
+const supportEmailLinks = document.querySelectorAll("[data-support-email]");
 
 function updateHeader() {
   if (!header) return;
@@ -32,6 +33,19 @@ function configureWaitlistLinks() {
   });
 }
 
+function configureSupportEmailLinks() {
+  supportEmailLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const recipient = ["support", "radimoo.com"].join("@");
+      const subject = encodeURIComponent(link.dataset.subject || "radimoo support request");
+      const body = encodeURIComponent("Tell us what happened:\n\n");
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    });
+  });
+}
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 configureWaitlistLinks();
+configureSupportEmailLinks();
