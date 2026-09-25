@@ -27,3 +27,19 @@ Keep those pages aligned with the app's actual data flows. In particular, the tw
 - Add Phrase dictation uses the operating system's native speech-recognition provider. Dictation audio is not sent to the radimoo backend, but the platform provider may process it on-device or on its own servers. The resulting text reaches radimoo only if the user generates or saves the phrase.
 
 When either flow changes, review the Privacy Policy, Terms of Service, in-app permission descriptions, and App Store Connect privacy answers together.
+
+## Search visibility
+
+Each public page declares its canonical URL under `https://radimoo.com/`.
+`sitemap.xml` lists the public pages, and `robots.txt` points crawlers to it.
+When adding or removing a public page, update the sitemap and its canonical URL together.
+
+After deploying:
+
+1. Verify the `radimoo.com` Domain property in [Google Search Console](https://search.google.com/search-console) using its DNS TXT record.
+2. Inspect `https://radimoo.com/`, run **Test live URL**, and request indexing.
+3. Submit `https://radimoo.com/sitemap.xml` in the Sitemaps report.
+4. Monitor indexing and search impressions for `radimoo`. Link to the same domain from public profiles and the App Store listing when available.
+
+Repository changes do not perform Search Console verification or submission.
+Indexing and search placement are controlled by Google and are not guaranteed.
