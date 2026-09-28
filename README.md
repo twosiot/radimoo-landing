@@ -19,6 +19,7 @@ radimoo is currently in early development.
 The public legal copy lives in:
 
 - `privacy/index.html`
+- `privacy/ko/index.html`
 - `terms/index.html`
 
 Keep those pages aligned with the app's actual data flows. In particular, the two current voice flows are different:
