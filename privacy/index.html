@@ -1,116 +1,163 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Privacy Policy for radimoo, an English speaking practice app."
-    />
-    <title>Privacy Policy | radimoo</title>
-    <link rel="canonical" href="https://radimoo.com/privacy/" />
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body class="legal-page">
-    <header class="site-header is-scrolled" aria-label="Site header">
-      <a class="brand" href="../index.html" aria-label="radimoo home">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="../favicon.svg" alt="" />
-        </span>
-        <span>radimoo</span>
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="../index.html#preview">Preview</a>
-        <a href="../terms/">Terms</a>
-        <a href="../support/">Support</a>
-      </nav>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for radimoo, an English speaking practice app." />
+  <title>Privacy Policy | radimoo</title>
+  <link rel="canonical" href="https://radimoo.com/privacy/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    .bg-site-flow {
+      background: linear-gradient(180deg, 
+        #FAF9FD 0%, 
+        #FFFFFF 10%, 
+        #FFFFFF 20%, 
+        #FAF9FD 38%, 
+        #F6F5F9 58%, 
+        #F2F1F6 78%, 
+        #EDEDF2 100%
+      );
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#111113",
+            "primary-dark": "#000000",
+            "surface-canvas": "#FFFFFF",
+            "surface-subtle": "#F6F6F8",
+            "surface-subtle-hover": "#EDEDF0",
+            "surface-card": "#FFFFFF",
+            "surface-border": "#E5E5EA",
+            "surface-border-subtle": "#EAEAEC",
+            "on-surface": "#111113",
+            "on-surface-variant": "#6E6E73",
+            "text-muted": "#86868B",
+            "accent-purple": "#8A3FFC",
+            "accent-blue": "#0A84FF",
+            "accent-green": "#10A37F",
+          },
+          fontFamily: {
+            headline: ["Plus Jakarta Sans", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+          },
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-site-flow text-on-surface antialiased selection:bg-[#8A3FFC]/10 selection:text-[#8A3FFC] min-h-screen flex flex-col">
+
+    <header class="w-full bg-transparent py-6">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+        <a href="../index.html" class="font-headline text-2xl font-bold tracking-tight text-primary lowercase hover:opacity-75 transition-opacity">
+          radimoo
+        </a>
+      </div>
     </header>
 
-    <main class="legal-main">
-      <p class="eyebrow">Legal</p>
-      <h1>Privacy Policy</h1>
-      <p class="legal-updated">Last updated: September 24, 2026</p>
-
-      <section class="legal-section">
-        <h2>Overview</h2>
-        <p>
-          radimoo helps people practice spoken English. This policy explains what information we
-          collect, how we use it, and the choices you have when using the app or website.
-        </p>
-      </section>
-
-      <section class="legal-section">
-        <h2>Information we collect</h2>
-        <ul>
-          <li>Account information, such as your sign-in provider, email address, and display name.</li>
-          <li>Practice preferences, including native language, English level, accent preference (US, UK, AU), daily goals, and selected situations.</li>
-          <li>Practice content, such as speech transcripts, AI feedback, scores, saved phrases, custom notes, personal example sentences, and progress history.</li>
-          <li>Practice voice audio: processed ephemerally in memory to transcribe and evaluate your speech. Raw practice recordings are never saved or stored on our servers.</li>
-          <li>Optional phrase dictation: when you tap a microphone beside a phrase or example field, your device's speech-recognition provider processes the audio and returns text to the app. Dictation audio is not sent to or stored by radimoo. Depending on your device, language, and settings, the provider may process it on the device or on its servers. Dictated text is handled like other text you enter and may be sent to radimoo when you choose to generate or save the phrase.</li>
-          <li>Device and notification information, including app version, device timezone, push notification tokens (FCM), notification preferences, and diagnostic logs (via Sentry.io).</li>
-          <li>Subscription details, such as active plan tier, renewal status, and app store transaction identifiers.</li>
-        </ul>
-      </section>
-
-      <section class="legal-section">
-        <h2>How we use information</h2>
-        <ul>
-          <li>Provide speaking practice, speech transcription, optional phrase dictation, feedback, phrase saving, and progress tracking.</li>
-          <li>Keep your profile and saved content available across devices when you sign in.</li>
-          <li>Deliver practice reminders and notifications based on your chosen settings.</li>
-          <li>Manage subscriptions, account security, support, and abuse prevention.</li>
-          <li>Diagnose app crashes, monitor performance, and improve reliability (using Sentry.io).</li>
-        </ul>
-      </section>
-
-      <section class="legal-section">
-        <h2>Sharing</h2>
-        <p>
-          We do not sell your personal information. We may share information with service providers
-          that help operate radimoo, such as authentication, hosting, analytics, payment, speech-to-text,
-          AI-processing, push notification, and crash-reporting providers (including Sentry.io). Service
-          providers engaged by radimoo process information to deliver the app under agreements with us.
-          Optional phrase dictation uses the speech-recognition service supplied by your device platform,
-          such as Apple Speech Recognition on iOS; that provider may process dictation audio under its own
-          privacy terms.
-        </p>
-      </section>
-
-      <section class="legal-section">
-        <h2>Your choices &amp; account deletion</h2>
-        <p>
-          You can choose not to create an account, though some features require sign-in. You can
-          type phrases instead of using dictation, and you can deny or revoke microphone and speech-recognition
-          permission in your device settings. You can also delete your account and all associated data
-          directly inside the app settings at any time,
-          which permanently purges your profile, transcripts, saved phrases, and history. You can also
-          contact us to request access, correction, export, or deletion of your personal information.
-        </p>
-      </section>
-
-      <section class="legal-section">
-        <h2>Contact</h2>
-        <p>
-          Questions or requests can be sent through
-          <a href="../support/">radimoo support</a>.
-        </p>
-      </section>
+    <main id="top" class="w-full flex-grow pt-10 pb-20 md:pt-16 md:pb-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <p class="font-headline text-sm font-semibold tracking-widest text-[#86868B] uppercase mb-2">Legal</p>
+              <h1 class="font-headline text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary mb-4 leading-tight">Privacy Policy</h1>
+              <p class="font-body text-base text-on-surface-variant mb-12">Last updated: September 24, 2026</p>
+        
+              <section class="mb-10">
+                <h2 class="font-headline text-xl sm:text-2xl font-bold tracking-tight text-primary mb-4">Overview</h2>
+                <p class="font-body text-base text-on-surface-variant leading-relaxed mb-4">
+                  radimoo helps people practice spoken English. This policy explains what information we
+                  collect, how we use it, and the choices you have when using the app or website.
+                </p>
+              </section>
+        
+              <section class="mb-10">
+                <h2 class="font-headline text-xl sm:text-2xl font-bold tracking-tight text-primary mb-4">Information we collect</h2>
+                <ul class="list-disc pl-6 space-y-2 font-body text-base text-on-surface-variant leading-relaxed mb-4">
+                  <li>Account information, such as your sign-in provider and email address.</li>
+                  <li>Practice preferences, including native language, English level, accent preference (US, UK, AU), daily goals, and selected situations.</li>
+                  <li>Practice content, such as speech transcripts, AI feedback, scores, saved phrases, custom notes, personal example sentences, and progress history.</li>
+                  <li>Practice voice audio: processed ephemerally in memory to transcribe and evaluate your speech. Raw practice recordings are never saved or stored on our servers.</li>
+                  <li>Optional phrase dictation: when you tap a microphone beside a phrase or example field, your device's speech-recognition provider processes the audio and returns text to the app. Dictation audio is not sent to or stored by radimoo. Depending on your device, language, and settings, the provider may process it on the device or on its servers. Dictated text is handled like other text you enter and may be sent to radimoo when you choose to generate or save the phrase.</li>
+                  <li>Device and notification information, including app version, device timezone, local notification preferences, and diagnostic logs (via Sentry.io).</li>
+                  <li>Subscription details, such as active plan tier, renewal status, and app store transaction identifiers.</li>
+                </ul>
+              </section>
+        
+              <section class="mb-10">
+                <h2 class="font-headline text-xl sm:text-2xl font-bold tracking-tight text-primary mb-4">How we use information</h2>
+                <ul class="list-disc pl-6 space-y-2 font-body text-base text-on-surface-variant leading-relaxed mb-4">
+                  <li>Provide speaking practice, speech transcription, optional phrase dictation, feedback, phrase saving, and progress tracking.</li>
+                  <li>Keep your profile and saved content available across devices when you sign in.</li>
+                  <li>Deliver practice reminders and notifications based on your chosen settings.</li>
+                  <li>Manage subscriptions, account security, support, and abuse prevention.</li>
+                  <li>Diagnose app crashes, monitor performance, and improve reliability (using Sentry.io).</li>
+                </ul>
+              </section>
+        
+              <section class="mb-10">
+                <h2 class="font-headline text-xl sm:text-2xl font-bold tracking-tight text-primary mb-4">Sharing</h2>
+                <p class="font-body text-base text-on-surface-variant leading-relaxed mb-4">
+                  We do not sell your personal information. We may share information with service providers
+                  that help operate radimoo, such as authentication, hosting, analytics, payment, speech-to-text,
+                  AI-processing, and crash-reporting providers (including Sentry.io). Service
+                  providers engaged by radimoo process information to deliver the app under agreements with us.
+                  Optional phrase dictation uses the speech-recognition service supplied by your device platform,
+                  such as Apple Speech Recognition on iOS; that provider may process dictation audio under its own
+                  privacy terms.
+                </p>
+              </section>
+        
+              <section class="mb-10">
+                <h2 class="font-headline text-xl sm:text-2xl font-bold tracking-tight text-primary mb-4">Your choices &amp; account deletion</h2>
+                <p class="font-body text-base text-on-surface-variant leading-relaxed mb-4">
+                  You can choose not to create an account, though some features require sign-in. You can
+                  type phrases instead of using dictation, and you can deny or revoke microphone and speech-recognition
+                  permission in your device settings. You can also delete your account and all associated data
+                  directly inside the app settings at any time,
+                  which permanently purges your profile, transcripts, saved phrases, and history. You can also
+                  contact us to request access, correction, export, or deletion of your personal information.
+                </p>
+              </section>
+        
+              <section class="mb-10">
+                <h2 class="font-headline text-xl sm:text-2xl font-bold tracking-tight text-primary mb-4">Contact</h2>
+                <p class="font-body text-base text-on-surface-variant leading-relaxed mb-4">
+                  Questions or requests can be sent through
+                  <a class="text-accent-blue hover:underline" href="../support/">radimoo support</a>.
+                </p>
+              </section>
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <p>radimoo is in early development.</p>
-      <nav class="footer-links" aria-label="Legal and contact links">
-        <a href="../privacy/">Privacy</a>
-        <a href="../terms/">Terms</a>
-        <a href="../support/">Support</a>
-      </nav>
+    <footer class="w-full bg-white text-primary py-8 border-t border-surface-border mt-auto">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+        <div class="flex flex-col items-center md:items-start gap-1">
+          <a href="../index.html" class="font-headline text-2xl font-bold tracking-tight text-primary lowercase hover:opacity-75 transition-opacity">
+            radimoo
+          </a>
+          <p class="font-body text-xs text-on-surface-variant tracking-tight">
+            © 2026 twosiot LLC. All rights reserved.
+          </p>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-on-surface-variant font-medium">
+          <a class="hover:text-primary transition-colors" href="/privacy/">Privacy</a>
+          <a class="hover:text-primary transition-colors" href="/terms/">Terms</a>
+          <a class="hover:text-primary transition-colors" href="/support/">Support</a>
+        </div>
+      </div>
     </footer>
-  </body>
+
+</body>
 </html>
