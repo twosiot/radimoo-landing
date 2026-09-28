@@ -6,3 +6,23 @@ Thumbs.db
 node_modules/
 dist/
 build/
+package-lock.json
+
+# Raw screen recordings & temp frames
+*.mov
+assets/*.mov
+assets/*_test.*
+assets/*_probe*
+assets/*_step_*
+assets/*_flow_*
+assets/*_scroll_*
+assets/*_*s.png
+assets/*_*s.jpg
+assets/*_detail*
+assets/sit2_*
+assets/fb_conv_*
+assets/fb_ots_*
+assets/ots_*
+assets/conv_*
+assets/onb_*
+
