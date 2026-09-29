@@ -395,8 +395,8 @@
       </section>
 
       <!-- ========================================================
-           TOP TICKER BANNER: AUTOMATIC WAVE PATH TEXT FLOW
-           Identical size and wave geometry to bottom wave ticker, flows automatically
+           TOP TICKER BANNER: SCROLL-TRIGGERED WAVE PATH TEXT FLOW
+           Identical size and wave geometry to bottom wave ticker, flows organically on scroll
            ======================================================== -->
       <div id="top-wave-container" class="w-full my-4 md:my-6 py-2 md:py-4 overflow-hidden select-none pointer-events-none">
         <svg viewBox="0 0 1600 220" class="w-full h-28 sm:h-36 md:h-44 overflow-visible block" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -890,23 +890,58 @@
       highlighters.forEach(h => h.classList.add("is-highlighted"));
     }
 
-    // 6. Scroll-Triggered Bottom Wave Path Text Flow (Silky Smooth Lerp Scrub)
-    const waveContainer = document.getElementById("wave-scroll-container");
-    const waveTextPath = document.getElementById("wave-text-path");
-    if (waveContainer && waveTextPath) {
-      let currentOffset = 0;
-      let targetOffset = 0;
+    // 6. Scroll-Triggered Wave Path Text Flow (Top & Bottom Tickers - Silky Smooth Lerp Scrub)
+    const topWaveContainer = document.getElementById("top-wave-container");
+    const topWaveTextPath = document.getElementById("top-wave-text-path");
+    const bottomWaveContainer = document.getElementById("wave-scroll-container");
+    const bottomWaveTextPath = document.getElementById("wave-text-path");
+
+    if ((topWaveContainer && topWaveTextPath) || (bottomWaveContainer && bottomWaveTextPath)) {
+      let topCurrentOffset = 0;
+      let topTargetOffset = 0;
+      let bottomCurrentOffset = 0;
+      let bottomTargetOffset = 0;
       let ticking = false;
 
-      function updateWave() {
-        const rect = waveContainer.getBoundingClientRect();
-        // Maps scroll progress to distance along curve
-        targetOffset = -rect.top * 0.75;
-        currentOffset += (targetOffset - currentOffset) * 0.12;
-        waveTextPath.setAttribute("startOffset", currentOffset.toFixed(1) + "px");
+      // Initialize initial resting offsets based on viewport position
+      if (topWaveContainer) {
+        const topRect = topWaveContainer.getBoundingClientRect();
+        topTargetOffset = -topRect.top * 0.75;
+        topCurrentOffset = topTargetOffset;
+        if (topWaveTextPath) topWaveTextPath.setAttribute("startOffset", topCurrentOffset.toFixed(1) + "px");
+      }
+      if (bottomWaveContainer) {
+        const bottomRect = bottomWaveContainer.getBoundingClientRect();
+        bottomTargetOffset = -bottomRect.top * 0.75;
+        bottomCurrentOffset = bottomTargetOffset;
+        if (bottomWaveTextPath) bottomWaveTextPath.setAttribute("startOffset", bottomCurrentOffset.toFixed(1) + "px");
+      }
 
-        if (Math.abs(targetOffset - currentOffset) > 0.1) {
-          requestAnimationFrame(updateWave);
+      function updateWaves() {
+        let needsNextFrame = false;
+
+        if (topWaveContainer && topWaveTextPath) {
+          const topRect = topWaveContainer.getBoundingClientRect();
+          topTargetOffset = -topRect.top * 0.75;
+          topCurrentOffset += (topTargetOffset - topCurrentOffset) * 0.12;
+          topWaveTextPath.setAttribute("startOffset", topCurrentOffset.toFixed(1) + "px");
+          if (Math.abs(topTargetOffset - topCurrentOffset) > 0.1) {
+            needsNextFrame = true;
+          }
+        }
+
+        if (bottomWaveContainer && bottomWaveTextPath) {
+          const bottomRect = bottomWaveContainer.getBoundingClientRect();
+          bottomTargetOffset = -bottomRect.top * 0.75;
+          bottomCurrentOffset += (bottomTargetOffset - bottomCurrentOffset) * 0.12;
+          bottomWaveTextPath.setAttribute("startOffset", bottomCurrentOffset.toFixed(1) + "px");
+          if (Math.abs(bottomTargetOffset - bottomCurrentOffset) > 0.1) {
+            needsNextFrame = true;
+          }
+        }
+
+        if (needsNextFrame) {
+          requestAnimationFrame(updateWaves);
         } else {
           ticking = false;
         }
@@ -915,28 +950,12 @@
       function onScrollWave() {
         if (!ticking) {
           ticking = true;
-          requestAnimationFrame(updateWave);
+          requestAnimationFrame(updateWaves);
         }
       }
 
       window.addEventListener("scroll", onScrollWave, { passive: true });
       window.addEventListener("resize", onScrollWave, { passive: true });
-      updateWave();
-    }
-
-    // 7. Automatic Continuous Wave Path Text Flow for Top Ticker
-    const topWaveTextPath = document.getElementById("top-wave-text-path");
-    if (topWaveTextPath) {
-      let topOffset = 0;
-      function stepTopWave() {
-        topOffset -= 0.85;
-        if (topOffset <= -2400) {
-          topOffset += 1200;
-        }
-        topWaveTextPath.setAttribute("startOffset", topOffset.toFixed(1) + "px");
-        requestAnimationFrame(stepTopWave);
-      }
-      requestAnimationFrame(stepTopWave);
     }
   </script>
 </body>
