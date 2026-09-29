@@ -169,22 +169,6 @@
       transition-delay: 0.3s;
     }
 
-    /* Hand-drawn Loop Circle Animation (Phrasebook automatically) */
-    .hand-circle {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
-    .circle-path {
-      stroke-dasharray: 480;
-      stroke-dashoffset: 480;
-      transition: stroke-dashoffset 0.95s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    #phrasebook.is-visible .circle-path,
-    .reveal-on-scroll.is-visible .circle-path {
-      stroke-dashoffset: 0;
-      transition-delay: 0.2s;
-    }
 
     /* Situations Progressive Drawing Interaction */
     .situations-arrow-line {
@@ -245,7 +229,7 @@
       .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
       .ticker-track { animation: none !important; }
       .highlighter-pen { background-size: 100% 90% !important; transition: none !important; }
-      .underline-path, .circle-path, .situations-arrow-line, .situations-arrow-head {
+      .underline-path, .situations-arrow-line, .situations-arrow-head {
         stroke-dashoffset: 0 !important;
         transition: none !important;
       }
@@ -655,7 +639,7 @@
                       ✨ Smart Phrase Finder
                     </h3>
                     <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                      Type what you remember. <span class="highlighter-pen">radimoo <span class="hand-circle">automatically<svg class="hand-circle-svg absolute -inset-x-3 -inset-y-1.5 w-[calc(100%+24px)] h-[calc(100%+12px)] pointer-events-none overflow-visible" viewBox="0 0 140 44" preserveAspectRatio="none" fill="none"><path class="circle-path" d="M 14 20 C 8 7, 32 3, 70 3 C 110 3, 136 8, 137 22 C 138 35, 110 41, 70 41 C 30 41, 5 37, 3 23 C 2 11, 22 4, 52 3 C 82 2, 112 4, 134 9" stroke="#111113" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span> finds the phrase, meaning, and context</span>, then adds it to your Phrasebook.
+                      Type what you remember. <span class="highlighter-pen">radimoo automatically finds the phrase, meaning, and context</span>, then adds it to your Phrasebook.
                     </p>
                   </div>
                 </div>
