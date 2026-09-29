@@ -135,7 +135,6 @@
     /* Realistic Highlighter Pen Effect (Sweeps on Scroll) */
     .highlighter-pen {
       display: inline;
-      background-image: linear-gradient(104deg, rgba(254, 240, 138, 0.75) 0%, rgba(253, 224, 71, 0.85) 100%);
       background-repeat: no-repeat;
       background-size: 0% 90%;
       background-position: 0 88%;
@@ -151,22 +150,27 @@
       background-size: 100% 90%;
     }
 
-    /* Hand-drawn Underline Animation (On the Spot & Review) */
-    .hand-drawn-underline {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
+    /* Distinct Pastel Highlighter Color Variants */
+    /* 1. Yellow (Warm classic stationery - Phrasebook Smart Finder) */
+    .highlighter-pen,
+    .highlighter-pen.highlighter-yellow {
+      background-image: linear-gradient(104deg, rgba(254, 240, 138, 0.82) 0%, rgba(253, 224, 71, 0.88) 100%);
     }
-    .underline-path {
-      stroke-dasharray: 260;
-      stroke-dashoffset: 260;
-      transition: stroke-dashoffset 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    /* 2. Soft Coral / Peach (Spontaneous, alert - On the Spot) */
+    .highlighter-pen.highlighter-coral {
+      background-image: linear-gradient(104deg, rgba(254, 215, 170, 0.85) 0%, rgba(251, 164, 164, 0.88) 100%);
     }
-    .reveal-on-scroll.is-visible .underline-path,
-    #feedback.is-visible .underline-path,
-    #spot.is-visible .underline-path {
-      stroke-dashoffset: 0;
-      transition-delay: 0.3s;
+    /* 3. Soft Sky Blue (Conversational, fluid - Make a Conversation) */
+    .highlighter-pen.highlighter-blue {
+      background-image: linear-gradient(104deg, rgba(186, 230, 253, 0.85) 0%, rgba(147, 197, 253, 0.88) 100%);
+    }
+    /* 4. Soft Lavender / Purple (Refined, tailored - Review Feedback) */
+    .highlighter-pen.highlighter-purple {
+      background-image: linear-gradient(104deg, rgba(233, 213, 255, 0.88) 0%, rgba(216, 180, 254, 0.90) 100%);
+    }
+    /* 5. Soft Mint Green (Fresh, balanced) */
+    .highlighter-pen.highlighter-green {
+      background-image: linear-gradient(104deg, rgba(167, 243, 208, 0.85) 0%, rgba(110, 231, 183, 0.88) 100%);
     }
 
 
@@ -229,7 +233,7 @@
       .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
       .ticker-track { animation: none !important; }
       .highlighter-pen { background-size: 100% 90% !important; transition: none !important; }
-      .underline-path, .situations-arrow-line, .situations-arrow-head {
+      .situations-arrow-line, .situations-arrow-head {
         stroke-dashoffset: 0 !important;
         transition: none !important;
       }
@@ -452,7 +456,7 @@
 
                   <p class="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
                     You won’t know what’s coming.<br class="hidden sm:inline">
-                    <span class="highlighter-pen">React in the moment.</span> Respond on the spot.
+                    <span class="highlighter-pen highlighter-coral">React in the moment.</span> Respond on the spot.
                   </p>
                 </div>
               </div>
@@ -478,7 +482,7 @@
 
                   <p class="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
                     Go back and forth, one turn at a time.<br class="hidden sm:inline">
-                    <span class="highlighter-pen">Keep the conversation moving.</span>
+                    <span class="highlighter-pen highlighter-blue">Keep the conversation moving.</span>
                   </p>
                 </div>
               </div>
@@ -529,7 +533,7 @@
                   Review the conversation, anytime.
                 </h2>
                 <p class="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
-                  Get actionable, multi-dimensional <span class="hand-drawn-underline">feedback tailored<svg class="absolute -bottom-1 left-0 w-full h-2.5 overflow-visible pointer-events-none" viewBox="0 0 200 10" preserveAspectRatio="none" fill="none"><path class="underline-path" d="M 2 7 C 55 10, 135 4, 198 7" stroke="#111113" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg></span> to your exact phrasing.
+                  Get actionable, multi-dimensional <span class="highlighter-pen highlighter-purple">feedback tailored to your exact phrasing.</span>
                 </p>
               </div>
             </div>
@@ -639,7 +643,7 @@
                       ✨ Smart Phrase Finder
                     </h3>
                     <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                      Type what you remember. <span class="highlighter-pen">radimoo automatically finds the phrase, meaning, and context</span>, then adds it to your Phrasebook.
+                      Type what you remember. <span class="highlighter-pen highlighter-yellow">radimoo automatically finds the phrase, meaning, and context</span>, then adds it to your Phrasebook.
                     </p>
                   </div>
                 </div>
