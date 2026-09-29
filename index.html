@@ -15,6 +15,16 @@
       body { overscroll-behavior: none; }
     }
 
+    /* Refined Typography Spacing: Relaxed tracking & breathable word separation for enhanced readability */
+    h1, h2, h3 {
+      letter-spacing: -0.01em !important;
+      word-spacing: 0.05em;
+    }
+    .font-headline:not(svg text):not(.tracking-widest) {
+      letter-spacing: -0.01em;
+      word-spacing: 0.05em;
+    }
+
     /* Apple-style Smooth Staggered Scroll Reveal */
     .reveal-on-scroll {
       opacity: 0;
@@ -141,45 +151,33 @@
       background-size: 100% 90%;
     }
 
-    /* Hand-drawn Underline Animation (On the Spot) */
+    /* Hand-drawn Underline Animation (On the Spot & Review) */
     .hand-drawn-underline {
       position: relative;
       display: inline-block;
+      white-space: nowrap;
     }
     .underline-path {
-      stroke-dasharray: 240;
-      stroke-dashoffset: 240;
+      stroke-dasharray: 260;
+      stroke-dashoffset: 260;
       transition: stroke-dashoffset 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .reveal-on-scroll.is-visible .underline-path {
+    .reveal-on-scroll.is-visible .underline-path,
+    #feedback.is-visible .underline-path,
+    #spot.is-visible .underline-path {
       stroke-dashoffset: 0;
       transition-delay: 0.3s;
-    }
-
-    /* Hand-drawn Yellow Star Animation (Review) */
-    .hand-star-svg {
-      overflow: visible;
-      vertical-align: middle;
-    }
-    .star-path {
-      stroke-dasharray: 120;
-      stroke-dashoffset: 120;
-      transition: stroke-dashoffset 0.85s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    #feedback.is-visible .star-path,
-    .reveal-on-scroll.is-visible .star-path {
-      stroke-dashoffset: 0;
-      transition-delay: 0.35s;
     }
 
     /* Hand-drawn Loop Circle Animation (Phrasebook automatically) */
     .hand-circle {
       position: relative;
       display: inline-block;
+      white-space: nowrap;
     }
     .circle-path {
-      stroke-dasharray: 320;
-      stroke-dashoffset: 320;
+      stroke-dasharray: 480;
+      stroke-dashoffset: 480;
       transition: stroke-dashoffset 0.95s cubic-bezier(0.4, 0, 0.2, 1);
     }
     #phrasebook.is-visible .circle-path,
@@ -247,7 +245,7 @@
       .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
       .ticker-track { animation: none !important; }
       .highlighter-pen { background-size: 100% 90% !important; transition: none !important; }
-      .underline-path, .star-path, .circle-path, .situations-arrow-line, .situations-arrow-head {
+      .underline-path, .circle-path, .situations-arrow-line, .situations-arrow-head {
         stroke-dashoffset: 0 !important;
         transition: none !important;
       }
@@ -265,6 +263,9 @@
       darkMode: "class",
       theme: {
         extend: {
+          letterSpacing: {
+            tight: "-0.01em",
+          },
           colors: {
             primary: "#111113",
             "primary-dark": "#000000",
@@ -372,26 +373,26 @@
             <!-- Scaled & Fluid Responsive: Side-by-side down to 640px -->
             <div class="sm:col-span-5 md:col-span-6 lg:col-span-7 flex flex-col items-center justify-center relative py-4">
 
-              <!-- 3-Screen Natural Stage (Scaled for Ultimate Sharpness & Elegance) -->
-              <div class="relative w-full max-w-[320px] sm:max-w-[360px] h-[280px] sm:h-[320px] flex items-center justify-center">
+              <!-- 3-Screen Natural Stage (Scaled +20% for Ultimate Sharpness & Elegance) -->
+              <div class="relative w-full max-w-[370px] sm:max-w-[420px] h-[320px] sm:h-[370px] flex items-center justify-center">
 
                 <!-- 1. LEFT: Phrasebook (real_phrasebook.png - original, uncropped) -->
-                <div class="hero-deck-phone hero-deck-left absolute w-[96px] sm:w-[110px] md:w-[124px]">
-                  <div class="rounded-[18px] sm:rounded-[22px] shadow-stoic-card overflow-hidden bg-white">
+                <div class="hero-deck-phone hero-deck-left absolute w-[115px] sm:w-[132px] md:w-[148px]">
+                  <div class="rounded-[22px] sm:rounded-[26px] shadow-stoic-card overflow-hidden bg-white">
                     <img src="assets/real_phrasebook.png" alt="radimoo Phrasebook" class="w-full h-auto block" />
                   </div>
                 </div>
 
                 <!-- 2. CENTER: Main (real_home_screen.png - original, uncropped) -->
-                <div class="hero-deck-phone hero-deck-center relative w-[112px] sm:w-[128px] md:w-[145px]">
-                  <div class="rounded-[20px] sm:rounded-[24px] shadow-stoic-elevated overflow-hidden bg-white">
+                <div class="hero-deck-phone hero-deck-center relative w-[134px] sm:w-[154px] md:w-[174px]">
+                  <div class="rounded-[24px] sm:rounded-[28px] shadow-stoic-elevated overflow-hidden bg-white">
                     <img src="assets/real_home_screen.png" alt="radimoo Main Home" class="w-full h-auto block" />
                   </div>
                 </div>
 
                 <!-- 3. RIGHT: Progress (real_progress_screen.png - original, uncropped) -->
-                <div class="hero-deck-phone hero-deck-right absolute w-[96px] sm:w-[110px] md:w-[124px]">
-                  <div class="rounded-[18px] sm:rounded-[22px] shadow-stoic-card overflow-hidden bg-white">
+                <div class="hero-deck-phone hero-deck-right absolute w-[115px] sm:w-[132px] md:w-[148px]">
+                  <div class="rounded-[22px] sm:rounded-[26px] shadow-stoic-card overflow-hidden bg-white">
                     <img src="assets/real_progress_screen.png" alt="radimoo Progress" class="w-full h-auto block" />
                   </div>
                 </div>
@@ -444,11 +445,11 @@
             <!-- ----------------------------------------------------
                  Row 1: On the Spot (Media on LEFT, Text on RIGHT)
                  ---------------------------------------------------- -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 items-center reveal-on-scroll">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center reveal-on-scroll">
               
-              <!-- Media LEFT: Centered Horizontally & Vertically in Column -->
+              <!-- Media LEFT: Centered Horizontally & Vertically in Column (+20% Scale) -->
               <div class="flex justify-center items-center h-full w-full py-4 order-1 sm:order-1">
-                <div class="w-[135px] min-[390px]:w-[150px] sm:w-[165px] md:w-[180px] lg:w-[195px] max-w-full rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
+                <div class="w-[162px] min-[390px]:w-[180px] sm:w-[198px] md:w-[216px] lg:w-[235px] max-w-full rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
                   <video src="assets/on_the_spot_top.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
                 </div>
               </div>
@@ -466,8 +467,8 @@
                   </h3>
 
                   <p class="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
-                    <span class="hand-drawn-underline">You won’t know what’s coming.<svg class="absolute -bottom-1 left-0 w-full h-2.5 overflow-visible pointer-events-none" viewBox="0 0 200 10" fill="none"><path class="underline-path" d="M 2 7 C 60 10, 140 4, 198 7" stroke="#111113" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg></span><br class="hidden sm:inline">
-                    React in the moment. Respond on the spot.
+                    You won’t know what’s coming.<br class="hidden sm:inline">
+                    <span class="highlighter-pen">React in the moment.</span> Respond on the spot.
                   </p>
                 </div>
               </div>
@@ -477,7 +478,7 @@
             <!-- ----------------------------------------------------
                  Row 2: Make a Conversation (Text on LEFT, Media on RIGHT)
                  ---------------------------------------------------- -->
-            <div id="conversation" class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 items-center reveal-on-scroll">
+            <div id="conversation" class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center reveal-on-scroll">
               
               <!-- Text LEFT: Left-aligned inside, hugs Left edge of column -->
               <div class="flex flex-col items-start justify-center w-full order-2 sm:order-1">
@@ -498,9 +499,9 @@
                 </div>
               </div>
 
-              <!-- Media RIGHT: Centered Horizontally & Vertically in Column -->
+              <!-- Media RIGHT: Centered Horizontally & Vertically in Column (+20% Scale) -->
               <div class="flex justify-center items-center h-full w-full py-4 order-1 sm:order-2">
-                <div class="w-[135px] min-[390px]:w-[150px] sm:w-[165px] md:w-[180px] lg:w-[195px] max-w-full rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
+                <div class="w-[162px] min-[390px]:w-[180px] sm:w-[198px] md:w-[216px] lg:w-[235px] max-w-full rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
                   <video src="assets/conversation_top.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
                 </div>
               </div>
@@ -518,17 +519,17 @@
            ======================================================== -->
       <section id="feedback" class="w-full bg-transparent py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 items-center reveal-on-scroll">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center reveal-on-scroll">
             
-            <!-- Media LEFT: Centered Horizontally & Vertically in Column -->
+            <!-- Media LEFT: Centered Horizontally & Vertically in Column (+20% Scale) -->
             <div class="flex justify-center items-center h-full w-full py-4 order-1 sm:order-1">
               <div class="flex items-center justify-center gap-3 sm:gap-4 md:gap-5">
                 <!-- Video 1: Conversation Feedback -->
-                <div class="w-[105px] min-[390px]:w-[118px] sm:w-[130px] md:w-[145px] lg:w-[160px] max-w-full rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                <div class="w-[126px] min-[390px]:w-[142px] sm:w-[156px] md:w-[175px] lg:w-[195px] max-w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
                   <video src="assets/feedback_conv_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
                 </div>
                 <!-- Video 2: On the Spot Feedback -->
-                <div class="w-[105px] min-[390px]:w-[118px] sm:w-[130px] md:w-[145px] lg:w-[160px] max-w-full rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                <div class="w-[126px] min-[390px]:w-[142px] sm:w-[156px] md:w-[175px] lg:w-[195px] max-w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
                   <video src="assets/feedback_ots_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
                 </div>
               </div>
@@ -544,7 +545,7 @@
                   Review the conversation, anytime.
                 </h2>
                 <p class="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
-                  Get actionable, multi-dimensional feedback tailored<svg class="hand-star-svg inline-block w-4 h-4 sm:w-5 sm:h-5 ml-1 align-middle -mt-1 text-[#F59E0B]" viewBox="0 0 24 24" fill="none"><path class="star-path" d="M 12 2 L 15 8.5 L 22 9.5 L 17 14.5 L 18.5 21.5 L 12 18 L 5.5 21.5 L 7 14.5 L 2 9.5 L 9 8.5 Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> to your exact phrasing.
+                  Get actionable, multi-dimensional <span class="hand-drawn-underline">feedback tailored<svg class="absolute -bottom-1 left-0 w-full h-2.5 overflow-visible pointer-events-none" viewBox="0 0 200 10" preserveAspectRatio="none" fill="none"><path class="underline-path" d="M 2 7 C 55 10, 135 4, 198 7" stroke="#111113" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg></span> to your exact phrasing.
                 </p>
               </div>
             </div>
@@ -600,8 +601,8 @@
               </svg>
             </div>
 
-            <!-- Authentic Unsquashed Screen: Responsive Fluid Sizing -->
-            <div class="w-[150px] min-[390px]:w-[165px] sm:w-[185px] md:w-[200px] lg:w-[215px] max-w-full rounded-[24px] sm:rounded-[28px] shadow-stoic-elevated overflow-hidden bg-[#FAFAFC] z-20">
+            <!-- Authentic Unsquashed Screen: Responsive Fluid Sizing (+20% Scale) -->
+            <div class="w-[180px] min-[390px]:w-[198px] sm:w-[222px] md:w-[240px] lg:w-[258px] max-w-full rounded-[28px] sm:rounded-[32px] shadow-stoic-elevated overflow-hidden bg-[#FAFAFC] z-20">
               <video src="assets/situation_open_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
             </div>
 
@@ -625,7 +626,7 @@
            ======================================================== -->
       <section id="phrasebook" class="w-full bg-transparent py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 items-center reveal-on-scroll">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center reveal-on-scroll">
             
             <!-- Text LEFT: Left-aligned inside, hugs Left edge of column -->
             <div class="flex flex-col items-start justify-center w-full order-2 sm:order-1">
@@ -654,16 +655,16 @@
                       ✨ Smart Phrase Finder
                     </h3>
                     <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                      Type what you remember. <span class="highlighter-pen">radimoo <span class="hand-circle">automatically<svg class="hand-circle-svg absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)] pointer-events-none overflow-visible" viewBox="0 0 100 40" fill="none"><path class="circle-path" d="M 10 20 C 8 8, 30 4, 60 5 C 90 6, 98 16, 94 28 C 90 38, 55 37, 25 35 C 8 33, 4 22, 18 12 C 26 6, 45 4, 65 6" stroke="#111113" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span> finds the phrase, meaning, and context</span>, then adds it to your Phrasebook.
+                      Type what you remember. <span class="highlighter-pen">radimoo <span class="hand-circle">automatically<svg class="hand-circle-svg absolute -inset-x-3 -inset-y-1.5 w-[calc(100%+24px)] h-[calc(100%+12px)] pointer-events-none overflow-visible" viewBox="0 0 140 44" preserveAspectRatio="none" fill="none"><path class="circle-path" d="M 14 20 C 8 7, 32 3, 70 3 C 110 3, 136 8, 137 22 C 138 35, 110 41, 70 41 C 30 41, 5 37, 3 23 C 2 11, 22 4, 52 3 C 82 2, 112 4, 134 9" stroke="#111113" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span> finds the phrase, meaning, and context</span>, then adds it to your Phrasebook.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Media RIGHT: Centered Horizontally & Vertically in Column -->
+            <!-- Media RIGHT: Centered Horizontally & Vertically in Column (+20% Scale) -->
             <div class="flex justify-center items-center h-full w-full py-4 order-1 sm:order-2">
-              <div class="w-[135px] min-[390px]:w-[150px] sm:w-[165px] md:w-[180px] lg:w-[195px] max-w-full rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
+              <div class="w-[162px] min-[390px]:w-[180px] sm:w-[198px] md:w-[216px] lg:w-[235px] max-w-full rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
                 <video src="assets/phrasebook_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
               </div>
             </div>
@@ -678,17 +679,17 @@
            ======================================================== -->
       <section id="personalization" class="w-full bg-transparent py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 items-center reveal-on-scroll">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center reveal-on-scroll">
             
-            <!-- Media LEFT: Centered Horizontally & Vertically in Column -->
+            <!-- Media LEFT: Centered Horizontally & Vertically in Column (+20% Scale) -->
             <div class="flex justify-center items-center h-full w-full py-4 order-1 sm:order-1">
               <div class="flex items-center justify-center gap-3 sm:gap-4 md:gap-5">
                 <!-- Screen 1: English Proficiency Level Selection -->
-                <div class="w-[105px] min-[390px]:w-[118px] sm:w-[130px] md:w-[145px] lg:w-[160px] max-w-full rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                <div class="w-[126px] min-[390px]:w-[142px] sm:w-[156px] md:w-[175px] lg:w-[195px] max-w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
                   <img src="assets/level_selection.png" alt="English Proficiency Selection" class="w-full h-auto block" />
                 </div>
                 <!-- Screen 2: Preferred Accent (American, British, Australian) -->
-                <div class="w-[105px] min-[390px]:w-[118px] sm:w-[130px] md:w-[145px] lg:w-[160px] max-w-full rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                <div class="w-[126px] min-[390px]:w-[142px] sm:w-[156px] md:w-[175px] lg:w-[195px] max-w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
                   <img src="assets/preferred_accent.png" alt="Preferred Accent Selection" class="w-full h-auto block" />
                 </div>
               </div>
