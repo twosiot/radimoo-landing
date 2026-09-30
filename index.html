@@ -11,7 +11,7 @@
   
   <style>
     @layer base {
-      html, body { margin: 0; padding: 0; }
+      html, body { margin: 0; padding: 0; background-color: #F8F7F5; }
       body { overscroll-behavior: none; }
     }
 
@@ -38,17 +38,9 @@
       transform: translateY(0);
     }
 
-    /* Continuous Subtle Page Gradation (Flows seamlessly across entire site) */
+    /* Unified Premium Warm Canvas (Soft, calm, non-glare stoic background) */
     .bg-site-flow {
-      background: linear-gradient(180deg, 
-        #FAF9FD 0%, 
-        #FFFFFF 10%, 
-        #FFFFFF 20%, 
-        #FAF9FD 38%, 
-        #F6F5F9 58%, 
-        #F2F1F6 78%, 
-        #EDEDF2 100%
-      );
+      background-color: #F8F7F5;
     }
 
     /* Hero Interactive 3-Card Stage */
@@ -258,7 +250,7 @@
           colors: {
             primary: "#111113",
             "primary-dark": "#000000",
-            "surface-canvas": "#FFFFFF",
+            "surface-canvas": "#F8F7F5",
             "surface-subtle": "#F6F6F8",
             "surface-subtle-hover": "#EDEDF0",
             "surface-card": "#FFFFFF",
@@ -753,7 +745,7 @@
     <!-- ========================================================
          FOOTER (Light Navigation Bar: Clean, compact padding)
          ======================================================== -->
-    <footer class="w-full bg-white text-primary py-8 border-t border-surface-border">
+    <footer class="w-full bg-[#F8F7F5] text-primary py-8 border-t border-surface-border">
       <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
         <div class="flex flex-col items-center md:items-start gap-1">
           <a href="#top" class="font-headline text-2xl font-bold tracking-tight text-primary lowercase hover:opacity-75 transition-opacity">
