@@ -18,14 +18,14 @@
     content="Practice speaking English with radimoo. Respond to everyday situations, get personalized feedback, and save useful phrases."
   />
   <meta property="og:url" content="https://radimoo.com/" />
-  <meta property="og:image" content="https://radimoo.com/assets/real_home_screen.png" />
+  <meta property="og:image" content="https://radimoo.com/favicon.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="radimoo — English speaking practice app" />
   <meta
     name="twitter:description"
     content="Practice speaking English with radimoo through real-life situations, voice responses, and personalized feedback."
   />
-  <meta name="twitter:image" content="https://radimoo.com/assets/real_home_screen.png" />
+  <meta name="twitter:image" content="https://radimoo.com/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -149,6 +149,37 @@
     }
     .animate-float-delayed {
       animation: gentle-float 4.8s ease-in-out 1.5s infinite;
+    }
+
+    .screen-placeholder {
+      aspect-ratio: 9 / 19.5;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.4) 18%, transparent 19%),
+        linear-gradient(180deg, #F8F8FA 0%, #ECECF1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      color: #86868B;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .screen-placeholder::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 34%;
+      height: 4px;
+      border-radius: 999px;
+      transform: translateX(-50%);
+      background: rgba(17, 17, 19, 0.08);
     }
 
     /* Continuous Marquee Ticker (Mathematically Seamless & Synchronized) */
@@ -328,24 +359,24 @@
               <!-- 3-Screen Natural Stage (Scaled for Ultimate Sharpness & Elegance) -->
               <div class="relative w-full max-w-[320px] sm:max-w-[360px] h-[280px] sm:h-[320px] flex items-center justify-center">
 
-                <!-- 1. LEFT: Phrasebook (real_phrasebook.png - original, uncropped) -->
+                <!-- 1. LEFT: Phrasebook placeholder -->
                 <div class="hero-deck-phone hero-deck-left absolute w-[96px] sm:w-[110px] md:w-[124px]">
-                  <div class="rounded-[18px] sm:rounded-[22px] shadow-stoic-card overflow-hidden bg-white">
-                    <img src="assets/real_phrasebook.png" alt="radimoo Phrasebook" class="w-full h-auto block" />
+                  <div class="relative rounded-[18px] sm:rounded-[22px] shadow-stoic-card overflow-hidden bg-white">
+                    <div class="screen-placeholder">Preview<br>coming soon</div>
                   </div>
                 </div>
 
-                <!-- 2. CENTER: Main (real_home_screen.png - original, uncropped) -->
+                <!-- 2. CENTER: Main placeholder -->
                 <div class="hero-deck-phone hero-deck-center relative w-[112px] sm:w-[128px] md:w-[145px]">
-                  <div class="rounded-[20px] sm:rounded-[24px] shadow-stoic-elevated overflow-hidden bg-white">
-                    <img src="assets/real_home_screen.png" alt="radimoo Main Home" class="w-full h-auto block" />
+                  <div class="relative rounded-[20px] sm:rounded-[24px] shadow-stoic-elevated overflow-hidden bg-white">
+                    <div class="screen-placeholder">App preview<br>coming soon</div>
                   </div>
                 </div>
 
-                <!-- 3. RIGHT: Progress (real_progress_screen.png - original, uncropped) -->
+                <!-- 3. RIGHT: Progress placeholder -->
                 <div class="hero-deck-phone hero-deck-right absolute w-[96px] sm:w-[110px] md:w-[124px]">
-                  <div class="rounded-[18px] sm:rounded-[22px] shadow-stoic-card overflow-hidden bg-white">
-                    <img src="assets/real_progress_screen.png" alt="radimoo Progress" class="w-full h-auto block" />
+                  <div class="relative rounded-[18px] sm:rounded-[22px] shadow-stoic-card overflow-hidden bg-white">
+                    <div class="screen-placeholder">Preview<br>coming soon</div>
                   </div>
                 </div>
 
@@ -440,10 +471,10 @@
                  ---------------------------------------------------- -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center reveal-on-scroll">
               
-              <!-- Media LEFT: Clean Phone Video (+20% Scale, Aligned to Inner Edge) -->
+              <!-- Media LEFT: Placeholder phone (+20% Scale, Aligned to Inner Edge) -->
               <div class="flex justify-center sm:justify-end items-center">
-                <div class="w-[150px] sm:w-[170px] md:w-[188px] rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
-                  <video src="assets/on_the_spot_top.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
+                <div class="relative w-[150px] sm:w-[170px] md:w-[188px] rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
+                  <div class="screen-placeholder">Practice preview<br>coming soon</div>
                 </div>
               </div>
 
@@ -491,10 +522,10 @@
                 </div>
               </div>
 
-              <!-- Media RIGHT: Clean Phone Video (+20% Scale, Aligned to Inner Edge Facing Text) -->
+              <!-- Media RIGHT: Placeholder phone (+20% Scale, Aligned to Inner Edge Facing Text) -->
               <div class="flex justify-center sm:justify-start items-center order-1 sm:order-2">
-                <div class="w-[150px] sm:w-[170px] md:w-[188px] rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
-                  <video src="assets/conversation_top.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
+                <div class="relative w-[150px] sm:w-[170px] md:w-[188px] rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
+                  <div class="screen-placeholder">Conversation preview<br>coming soon</div>
                 </div>
               </div>
 
@@ -513,16 +544,16 @@
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center reveal-on-scroll">
             
-            <!-- Media LEFT: Straight Side-by-Side Duo Videos (Upright, Clean Retinal Cards) -->
+            <!-- Media LEFT: Straight Side-by-Side Placeholder Screens (Upright, Clean Retinal Cards) -->
             <div class="flex justify-center sm:justify-end items-center py-4 order-1 sm:order-1">
               <div class="flex items-center justify-center gap-3 sm:gap-4 md:gap-5">
-                <!-- Video 1: Conversation Feedback -->
-                <div class="w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
-                  <video src="assets/feedback_conv_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
+                <!-- Screen 1: Conversation Feedback -->
+                <div class="relative w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                  <div class="screen-placeholder">Feedback preview<br>coming soon</div>
                 </div>
-                <!-- Video 2: On the Spot Feedback -->
-                <div class="w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
-                  <video src="assets/feedback_ots_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
+                <!-- Screen 2: On the Spot Feedback -->
+                <div class="relative w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                  <div class="screen-placeholder">Review preview<br>coming soon</div>
                 </div>
               </div>
             </div>
@@ -561,7 +592,7 @@
 
       <!-- ========================================================
            CHAPTER 3: EVERYDAY SCENARIOS (Natural Aspect Ratio Phone Showcase)
-           Cropped ONLY the top recording pill (situation_open_clean.mp4)
+           Placeholder app preview before launch
            Black Hand-Drawn SVG Arrows & Black Sans-Serif Annotations
            ======================================================== -->
       <section id="scenarios" class="w-full bg-transparent py-16 md:py-24 relative overflow-hidden">
@@ -591,9 +622,9 @@
               </svg>
             </div>
 
-            <!-- Authentic Unsquashed Screen: Scaled +20%, sharp retina display -->
-            <div class="w-[165px] sm:w-[182px] md:w-[200px] rounded-[24px] sm:rounded-[28px] shadow-stoic-elevated overflow-hidden bg-[#FAFAFC] z-20">
-              <video src="assets/situation_open_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
+            <!-- Placeholder Screen: Scaled +20%, sharp retina display -->
+            <div class="relative w-[165px] sm:w-[182px] md:w-[200px] rounded-[24px] sm:rounded-[28px] shadow-stoic-elevated overflow-hidden bg-[#FAFAFC] z-20">
+              <div class="screen-placeholder">Situation preview<br>coming soon</div>
             </div>
 
             <!-- Right Hand-Drawn SVG Arrow & Annotation (Pure Black, Sans-Serif, Tight to Phone) -->
@@ -652,10 +683,10 @@
               </div>
             </div>
 
-            <!-- Media RIGHT: Real Phrasebook Video (+20% Scale, Aligned to Inner Edge) -->
+            <!-- Media RIGHT: Phrasebook Placeholder (+20% Scale, Aligned to Inner Edge) -->
             <div class="flex justify-center sm:justify-start items-center order-1 sm:order-2">
-              <div class="w-[150px] sm:w-[170px] md:w-[188px] rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
-                <video src="assets/phrasebook_clean.mp4" autoplay loop muted playsinline preload="auto" class="w-full h-auto block"></video>
+              <div class="relative w-[150px] sm:w-[170px] md:w-[188px] rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC]">
+                <div class="screen-placeholder">Phrasebook preview<br>coming soon</div>
               </div>
             </div>
 
@@ -671,16 +702,16 @@
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center reveal-on-scroll">
             
-            <!-- Media LEFT: Straight Side-by-Side Duo Screens (Upright, Clean Retinal Cards) -->
+            <!-- Media LEFT: Straight Side-by-Side Placeholder Screens (Upright, Clean Retinal Cards) -->
             <div class="flex justify-center sm:justify-end items-center py-4 order-1 sm:order-1">
               <div class="flex items-center justify-center gap-3 sm:gap-4 md:gap-5">
                 <!-- Screen 1: English Proficiency Level Selection -->
-                <div class="w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
-                  <img src="assets/level_selection.png" alt="English Proficiency Selection" class="w-full h-auto block" />
+                <div class="relative w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-card bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                  <div class="screen-placeholder">Level preview<br>coming soon</div>
                 </div>
                 <!-- Screen 2: Preferred Accent (American, British, Australian) -->
-                <div class="w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
-                  <img src="assets/preferred_accent.png" alt="Preferred Accent Selection" class="w-full h-auto block" />
+                <div class="relative w-[125px] sm:w-[140px] md:w-[155px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-stoic-elevated bg-[#FAFAFC] transition-transform duration-300 hover:scale-[1.02]">
+                  <div class="screen-placeholder">Accent preview<br>coming soon</div>
                 </div>
               </div>
             </div>
