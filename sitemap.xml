@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://radimoo.com/</loc></url>
-  <url><loc>https://radimoo.com/support/</loc></url>
-  <url><loc>https://radimoo.com/delete-account/</loc></url>
-  <url><loc>https://radimoo.com/privacy/</loc></url>
-  <url><loc>https://radimoo.com/privacy/ko/</loc></url>
-  <url><loc>https://radimoo.com/terms/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Main Landing Pages -->
+  <url>
+    <loc>https://radimoo.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://radimoo.com/" />
+  </url>
+  <url>
+    <loc>https://radimoo.com/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/" />
+  </url>
+  <url>
+    <loc>https://radimoo.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/" />
+  </url>
+  <url>
+    <loc>https://radimoo.com/zh-tw/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/" />
+  </url>
+  <url>
+    <loc>https://radimoo.com/zh-cn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/" />
+  </url>
+
+  <!-- Privacy Policy Pages -->
+  <url>
+    <loc>https://radimoo.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://radimoo.com/privacy/" />
+  </url>
+  <url><loc>https://radimoo.com/ko/privacy/</loc></url>
+  <url><loc>https://radimoo.com/ja/privacy/</loc></url>
+  <url><loc>https://radimoo.com/zh-tw/privacy/</loc></url>
+  <url><loc>https://radimoo.com/zh-cn/privacy/</loc></url>
+
+  <!-- Terms of Service Pages -->
+  <url>
+    <loc>https://radimoo.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/terms/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/terms/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/terms/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/terms/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://radimoo.com/terms/" />
+  </url>
+  <url><loc>https://radimoo.com/ko/terms/</loc></url>
+  <url><loc>https://radimoo.com/ja/terms/</loc></url>
+  <url><loc>https://radimoo.com/zh-tw/terms/</loc></url>
+  <url><loc>https://radimoo.com/zh-cn/terms/</loc></url>
+
+  <!-- Support Pages -->
+  <url>
+    <loc>https://radimoo.com/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/support/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/support/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://radimoo.com/support/" />
+  </url>
+  <url><loc>https://radimoo.com/ko/support/</loc></url>
+  <url><loc>https://radimoo.com/ja/support/</loc></url>
+  <url><loc>https://radimoo.com/zh-tw/support/</loc></url>
+  <url><loc>https://radimoo.com/zh-cn/support/</loc></url>
+
+  <!-- Delete Account Pages -->
+  <url>
+    <loc>https://radimoo.com/delete-account/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://radimoo.com/delete-account/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://radimoo.com/ko/delete-account/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://radimoo.com/ja/delete-account/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://radimoo.com/zh-tw/delete-account/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://radimoo.com/zh-cn/delete-account/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://radimoo.com/delete-account/" />
+  </url>
+  <url><loc>https://radimoo.com/ko/delete-account/</loc></url>
+  <url><loc>https://radimoo.com/ja/delete-account/</loc></url>
+  <url><loc>https://radimoo.com/zh-tw/delete-account/</loc></url>
+  <url><loc>https://radimoo.com/zh-cn/delete-account/</loc></url>
 </urlset>
