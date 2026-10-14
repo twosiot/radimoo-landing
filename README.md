@@ -44,3 +44,16 @@ After deploying:
 
 Repository changes do not perform Search Console verification or submission.
 Indexing and search placement are controlled by Google and are not guaranteed.
+
+## Social link previews
+
+The five localized landing pages use `assets/social-preview.png` for Open Graph
+and Twitter/X previews. This 1024 × 500 PNG reuses the approved radimoo graphic
+from the frontend Play Store assets. Keep the image public and its metadata
+dimensions consistent with the file. Run `python3 -m unittest discover -s tests -v`
+to validate the preview metadata and image.
+
+After deployment, check `https://radimoo.com/assets/social-preview.png`. Platforms
+may cache old previews; refresh the URL using Facebook Sharing Debugger or
+LinkedIn Post Inspector before sharing again. Preview display is controlled by
+the platform, and not every post type supports link thumbnails.
